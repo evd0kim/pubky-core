@@ -1,4 +1,5 @@
 use crate::admin::{AdminServer, AdminServerBuildError};
+use crate::dav::DavServer;
 use crate::core::{HomeserverBuildError, HomeserverCore};
 use crate::MockDataDir;
 use crate::{app_context::AppContext, data_directory::PersistentDataDir};
@@ -6,6 +7,7 @@ use anyhow::Result;
 use pkarr::PublicKey;
 use std::path::PathBuf;
 use tracing_subscriber::EnvFilter;
+
 
 /// Errors that can occur when building a `HomeserverSuite`.
 #[derive(thiserror::Error, Debug)]
@@ -28,6 +30,8 @@ pub struct HomeserverSuite {
     core: HomeserverCore,
     #[allow(dead_code)] // Keep this alive. When dropped, the admin server will stop.
     admin_server: AdminServer,
+    #[allow(dead_code)]
+    webdav_server: DavServer
 }
 
 impl HomeserverSuite {
@@ -78,11 +82,13 @@ impl HomeserverSuite {
 
         let core = HomeserverCore::new(context.clone()).await?;
         let admin_server = AdminServer::start(&context).await?;
+        let webdav_server = DavServer::start(&context).await?;
 
         Ok(Self {
             context,
             core,
             admin_server,
+            webdav_server,
         })
     }
 

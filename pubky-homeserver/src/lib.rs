@@ -20,8 +20,11 @@ mod homeserver_suite;
 mod persistence;
 mod shared;
 
+mod dav;
+
 pub use admin::{AdminServer, AdminServerBuildError};
 pub use app_context::{AppContext, AppContextConversionError};
 pub use core::{HomeserverBuildError, HomeserverCore};
 pub use data_directory::*;
 pub use homeserver_suite::{HomeserverSuite, HomeserverSuiteBuildError};
+pub use dav::{DavServer, DavServerBuildError};
