@@ -1,6 +1,8 @@
 name: digital-ocean-homeserver
 services:
   - name: web
-    github:
-      repo: evd0kim/pubky-core
-      branch: do-app-deployment
+    image:
+      registry_type: DOCKER_HUB
+      registry: ievdokimov
+      repository: pubky
+      digest: sha256:cf87390699ea88be3be1f9b477348d7e0f7e7898a1dbe6ac4ec81168c93e39a1
