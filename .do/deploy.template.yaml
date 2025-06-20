@@ -2,9 +2,11 @@ spec:
   name: digital-ocean-homeserver
   services:
     - name: web
-      git:
-        branch: do-app-deployment
-        repo_clone_url: https://github.com/evd0kim/pubky-core.git
+      image:
+        registry_type: DOCKER_HUB
+        registry: ievdokimov
+        repository: pubky
+        digest: sha256:cf87390699ea88be3be1f9b477348d7e0f7e7898a1dbe6ac4ec81168c93e39a1
       envs:
         - key: DB_FOO_1
           value: "DB-password-testvalue"
@@ -13,3 +15,4 @@ spec:
           scope: RUN_TIME
         - key: MESSAGE
           value: "This is a greeting message"
+
