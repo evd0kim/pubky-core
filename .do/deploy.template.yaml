@@ -3,7 +3,7 @@ spec:
   services:
     - name: web
       git:
-        branch: client-refactoring-stage-1
+        branch: do-app-deployment
         repo_clone_url: https://github.com/evd0kim/pubky-core.git
       envs:
         - key: DB_FOO_1

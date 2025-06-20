@@ -3,4 +3,4 @@ services:
   - name: web
     github:
       repo: evd0kim/pubky-core
-      branch: client-refactoring-stage-1
+      branch: do-app-deployment
