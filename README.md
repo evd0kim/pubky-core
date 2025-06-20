@@ -31,6 +31,8 @@
 
 > The Web, long centralized, must decentralize; Long decentralized, must centralize.
 
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/evd0kim/pubky-core/tree/client-refactoring-stage-1&refcode=58f89edab892)
+
 ## Overview
 
 Pubky-core combines a [censorship resistant public-key based alternative to DNS](https://pkarr.org) with conventional, tried and tested web technologies, to keep users in control of their identities and data, while enabling developers to build software with as much availability as web apps, without the costs of managing a central database.
